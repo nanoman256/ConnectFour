@@ -12,8 +12,8 @@ public:
 		: m_renderer(renderer),
 			m_player1(p1),
 			m_player2(p2),
-			winner(screenWidth / 4, screenHeight / 4, 200, 100),
-			playAgain(screenHeight - screenHeight / 10, screenWidth / 2, 100, 20)
+			winner(winnerX, winnerY, winnerTextWidth, winnerTextHeight),
+			playAgain(playAgainX, playAgainY, playAgainWidth, playAgainHeight)
 	{
 		exitGame = TextLabel();//figure out dimensions
 		m_mouse = mouse;
