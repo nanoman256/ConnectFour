@@ -244,6 +244,7 @@ void Game::Update()
 {
 	TogglePlayer();
 }
+//added comment
 void Game::CheckGrid()
 {
 	int totalLength = squareLength * gridWidth;
