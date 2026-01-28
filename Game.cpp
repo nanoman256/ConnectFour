@@ -9,14 +9,14 @@ Game::Game(SDL_Renderer* renderer, std::shared_ptr<Mouse> mouse, std::shared_ptr
 
 void Game::DrawGrid()
 {
-	int dY = gridOffset;
+	int dY = gridOffsetY;
 	for (int i = 0; i < m_grid.size(); i++)
 	{
-		int dX = gridOffset;
-		dY = gridOffset + (i * squareHeight);
+		int dX = gridOffsetX;
+		dY = gridOffsetY + (i * squareHeight);
 		for (int j = 0; j < m_grid[0].size(); j++)
 		{
-			dX = gridOffset + (j * squareLength);
+			dX = gridOffsetX + (j * squareLength);
 			SDL_FRect square;
 			square.h = squareHeight;
 			square.w = squareLength;
@@ -51,8 +51,8 @@ void Game::DrawGrid()
 
 const SDL_Point Game::GridToPixel(int x, int y)
 {
-	int xPos = gridOffset + x * squareLength;
-	int yPos = gridOffset + y * squareHeight;
+	int xPos = gridOffsetX + x * squareLength;
+	int yPos = gridOffsetY + y * squareHeight;
 	return { xPos, yPos };
 }
 
@@ -252,8 +252,8 @@ void Game::CheckGrid()
 
 	SDL_FPoint mouseCoords = m_mouse->GetMousePos();
 
-	int mousePtX = mouseCoords.x - gridOffset;
-	int mousePtY = mouseCoords.y - gridOffset;
+	int mousePtX = mouseCoords.x - gridOffsetX;
+	int mousePtY = mouseCoords.y - gridOffsetY;
 
 	int mouseCoordX = mousePtX / squareLength;
 	int mouseCoordY = mousePtY / squareHeight;
@@ -323,6 +323,7 @@ void Game::OnClose() //on state end
 
 void Game::OnStart() //on state start
 {
+	SetNextGameState(GameState::Game);
 	togglePlayer = true;
 	TogglePlayer();
 }

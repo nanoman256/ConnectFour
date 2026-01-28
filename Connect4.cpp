@@ -30,6 +30,7 @@ void Connect4::ChangeState(GameState requestedState)
 	case (GameState::Exit):
 		std::exit(0);
 	}
+	nextGameState = requestedState;
 	currentState->OnStart();
 }
 

@@ -7,7 +7,16 @@ const int screenHeight = 600;
 const int screenWidth = 800;
 const int squareLength = (screenHeight - 100) / gridHeight;
 const int squareHeight = (screenWidth - 100) / gridWidth;
-const int gridOffset = 40;
+const int gridOffsetX = 80;
+const int gridOffsetY = 30;
+const int winnerX = screenWidth / 4;
+const int winnerY = screenHeight / 6;
+const int winnerTextWidth = screenWidth / 2;
+const int winnerTextHeight = screenHeight / 4;
+const int playAgainX = (screenHeight - screenHeight / 10);
+const int playAgainY = screenWidth / 2;
+const int playAgainWidth = 100;
+const int playAgainHeight = 20;
 
 //SDL color constants
 const SDL_Color RED = { 255, 0, 0, 255 };

@@ -74,5 +74,12 @@ void GameOver::OnClose()
 }
 void GameOver::OnStart() 
 {
+	std::string winLabel = "The winner is Player";
+	if (m_player1->isTurn())
+	{
+		winLabel += std::to_string(1);
+	}
+	else winLabel += std::to_string(2);
+	winner.SetLabel(m_renderer, m_font, winLabel);
 	return;
 }
