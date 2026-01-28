@@ -1,0 +1,8 @@
+.vs/
+ConnectFour.aps
+ConnectFour.rc
+ConnectFour.sln
+ConnectFour.vcxproj
+ConnectFour.vcxproj.filters
+ConnectFour.vcxproj.user
+ConnectFour/x64/*
